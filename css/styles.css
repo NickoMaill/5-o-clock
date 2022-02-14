@@ -167,7 +167,8 @@ header {
     background-color: #fff;
     border-radius: 1rem;
     font-size: 1rem;
-    cursor: pointer;
+    /* cursor: pointer; */
+    display: inline-block;
     transition-duration: 300ms, 300ms;
 }
 
@@ -198,7 +199,7 @@ figure {
 
 }
 
-.w3-tooltip, .w3-display-container {
+.w3-display-container {
     position: relative
 }
 
@@ -210,7 +211,7 @@ figure {
     display: inline-block
 }
 
-.w3-content, .w3-auto {
+.w3-content {
     margin-left: auto;
     margin-right: auto
 }
@@ -219,7 +220,7 @@ figure {
     max-width: 980px
 }
 
-.w3-btn, .w3-button {
+.w3-button {
     border: none;
     display: inline-block;
     padding: 8px 16px;
@@ -227,31 +228,37 @@ figure {
     overflow: hidden;
     text-decoration: none;
     color: inherit;
-    background-color: inherit;
+    /* background-color: inherit; */
     text-align: center;
     cursor: pointer;
     white-space: nowrap
 }
 
-.w3-black, .w3-hover-black:hover {
-    color: #fff !important;
-    background-color: #000 !important
+.w3-black{
+    color: rgb(255, 255, 255,0.5);
+    background-color: rgb(0, 0, 0, 0.5);
+    transition-duration: 300ms, 300ms; 
+}
+
+.w3-black:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0) 
 }
 
 .w3-display-left {
     position: absolute;
     top: 50%;
     left: 0%;
-    transform: translate(0%, -50%);
-    -ms-transform: translate(-0%, -50%)
+    transform: translate(0%, -150%);
+    -ms-transform: translate(-0%, -150%)
 }
 
 .w3-display-right {
     position: absolute;
     top: 50%;
     right: 0%;
-    transform: translate(0%, -50%);
-    -ms-transform: translate(0%, -50%)
+    transform: translate(0%, -150%);
+    -ms-transform: translate(0%, -150%)
 }
 
 .band-picture {
@@ -261,9 +268,11 @@ figure {
 /* .btn-set-list:hover {
     background-color: black;
     color: white;
+    border: none;
     -ms-transform: scale(1.2);
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
+    
 } */
 
 .container-footer {
