@@ -17,12 +17,140 @@
   --mainFront: 'Main-font';
   --mainFontItalic: 'Main-font-italic';
   --titleFont: 'Title-font';
-  --backgroundDivContainer: rgba(0,0,0,0.5);
+  --backgroundDivContainer: rgba(0,0,0,0.6);
   --fontColor: #FFFFFF;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-image: url(../assets/pictures/ElodieRoyPhotographe-4942.jpg);
   background-size: cover;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--mainFront);
+}
+
+p, span, label {
+  font-family: var(--mainFront);
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+}
+
+header, footer, section, article {
+  margin: 3rem;
+}
+
+article, header, footer {
+  background-color: var(--backgroundDivContainer);
+}
+
+article {
+  padding-block: 6rem;
+  padding-inline: 4rem;
+}
+
+header {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.header-link-container {
+  margin-block: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-icon {
+  margin-inline: 2rem;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.header-icon:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.description-paragraph {
+  text-align: center;
+  line-height: 1.7;
+}
+
+.team-container-left {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.team-container-right {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.team-container-left, .team-container-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team-info-container h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.team-info-container h3 {
+  text-transform: uppercase;
+  margin-block: 2rem;
+  font-weight: 600;
+}
+
+.team-info-container p {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.team-picture {
+  width: 20rem;
 }
 /*# sourceMappingURL=styles.css.map */
