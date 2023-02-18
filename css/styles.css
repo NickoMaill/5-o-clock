@@ -17,8 +17,8 @@
   --mainFront: 'Main-font';
   --mainFontItalic: 'Main-font-italic';
   --titleFont: 'Title-font';
-  --backgroundDivContainer: rgba(0,0,0,0.6);
-  --fontColor: #FFFFFF;
+  --backgroundDivContainer: rgba(0, 0, 0, 0.6);
+  --fontColor: #ffffff;
 }
 
 * {
@@ -32,13 +32,30 @@ body {
   background-image: url(../assets/pictures/ElodieRoyPhotographe-4942.jpg);
   background-size: cover;
   background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--mainFront);
 }
 
-p, span, label {
+p,
+span,
+label {
   font-family: var(--mainFront);
 }
 
@@ -51,11 +68,17 @@ a {
   text-decoration: none;
 }
 
-header, footer, section, article {
+header,
+footer,
+section,
+article {
   margin: 3rem;
+  max-width: 1440px;
 }
 
-article, header, footer {
+article,
+header,
+footer {
   background-color: var(--backgroundDivContainer);
 }
 
@@ -80,6 +103,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
 .header-link-container {
@@ -115,6 +139,10 @@ header {
           flex-direction: row;
 }
 
+.team-container-left .team-info-container {
+  margin-left: 5rem;
+}
+
 .team-container-right {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
@@ -122,7 +150,19 @@ header {
           flex-direction: row-reverse;
 }
 
-.team-container-left, .team-container-right {
+.team-container-right .team-info-container {
+  margin-right: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.team-container-left,
+.team-container-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,5 +192,149 @@ header {
 
 .team-picture {
   width: 20rem;
+  margin-block: 1rem;
+}
+
+.video-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.yt-video {
+  width: 720px;
+  height: 405px;
+}
+
+.hidden {
+  display: none;
+}
+
+.player {
+  max-width: 500px;
+  margin: 7rem auto;
+  background: white;
+  padding: 36px 32px 24px 32px;
+  border-radius: 14px;
+}
+
+.player-track-meta {
+  text-align: center;
+}
+
+.player-track-meta p {
+  margin: 0;
+  font-size: 20px;
+  color: #0e0e0e;
+  font-weight: 700;
+}
+
+.player-track-meta span {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 2px;
+  position: relative;
+  top: 1px;
+  color: #a3a3a3;
+}
+
+.player-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player-play-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 36px;
+  height: 36px;
+}
+
+.icon-container {
+  fill: transparent;
+  stroke: none;
+}
+
+.player-play-btn:hover {
+  fill: #444444;
+}
+
+.player-play-btn svg {
+  color: #0e0e0e;
+  position: relative;
+  left: 0.5px;
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.player-play-btn:hover svg {
+  color: #ffffff;
+}
+
+.player-timeline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 10px;
+}
+
+.player-progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 6px;
+  background: #a3a3a3;
+  border-radius: 25px;
+  margin: 0 5px;
+  -webkit-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  overflow: hidden;
+}
+
+.player-progress-filled {
+  height: 6px;
+  background: #0e0e0e;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  -ms-flex-preferred-size: 0%;
+      flex-basis: 0%;
+  border-radius: 25px;
+}
+
+.player-time {
+  padding: 2px 5px;
+  color: #0e0e0e;
 }
 /*# sourceMappingURL=styles.css.map */

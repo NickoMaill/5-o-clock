@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="team-container-right">
-                    <img class="team-picture" src="" alt="" />
+                    <img class="team-picture" src="./Exportation Lightroom/D57A0318.jpg" alt="" />
                     <div class="team-info-container">
                         <h2>Samuel Durand</h2>
                         <h3>Bassiste</h3>
@@ -78,22 +78,43 @@
                     </div>
                 </div>
                 <div class="team-container-left">
-                    <img class="team-picture" src="" alt="" />
+                    <img class="team-picture" src="./wetransfer_photo-groype_2023-02-12_1710/ElodieRoyPhotographe-4753.jpg" alt="" />
                     <div class="team-info-container">
-                        <h2></h2>
-                        <h3></h3>
-                        <p></p>
+                        <h2>Léo Ané</h2>
+                        <h3>Batteur</h3>
+                        <p>Batteur depuis 14 ans, Léo commence la musique à l'âge de 3 ans en commençant par le clavecin puis la batterie au Conservatoire Municipal de Franconville. En 2020 il sort un album de Hard FM avec le groupe Dog Temper. Diplômé d'un Master MEEF espagnol, il est aujourd'hui professeur d'espagnol dans les lycées.</p>
                     </div>
                 </div>
             </article>
             <!---------------------- TEAM ARTICLE END ------------------------>
 
+            <!---------------------- VIDEO PLAYER START ------------------------>
+            <article class="video-article">
+                <iframe class="yt-video" src="https://www.youtube.com/embed/eSkyU2QplYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </article>
+            <!---------------------- VIDEO PLAYER END ------------------------>
             <!---------------------- AUDIO PLAYER START ------------------------>
-            <article class="audio-article"></article>
+            <article class="audio-article">
+				<div id="waveform"></div>
+				<button id="audioControl1">
+					<img src="./assets/svg/play.svg" alt="">
+					<p id="audio1Time"></p>
+				</button>
+				<button id="audioControl2">
+					<img src="./assets/svg/play.svg" alt="">
+					<p id="audio2Time"></p>
+				</button>
+				<button id="audioControl3">
+					<img src="./assets/svg/play.svg" alt="">
+					<p id="audio3Time"></p>
+				</button>
+            </article>
             <!---------------------- AUDIO PLAYER END ------------------------>
         </main>
         <!---------------------- MAIN END ------------------------>
         <footer></footer>
+		<script src="https://unpkg.com/wavesurfer.js"></script>
+		<script src="./JS/index.js"></script>
     </body>
     <!---------------------- MAIN END ------------------------>
 </html>
