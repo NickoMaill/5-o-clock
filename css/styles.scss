@@ -17,7 +17,7 @@
     --mainFront: 'Main-font';
     --mainFontItalic: 'Main-font-italic';
     --titleFont: 'Title-font';
-    --backgroundDivContainer: rgba(0, 0, 0, 0.6);
+    --backgroundDivContainer: #00000099;
     --fontColor: #ffffff;
 }
 
@@ -87,6 +87,28 @@ header {
     align-items: center;
     height: 100vh;
     width: 100vw;
+}
+
+/** SPINNER **/
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .header-link-container {
@@ -164,105 +186,54 @@ header {
     height: 405px;
 }
 
-.hidden {
-    display: none;
-}
-
-.player {
-    max-width: 500px;
-    margin: 7rem auto;
-    background: white;
-    padding: 36px 32px 24px 32px;
-    border-radius: 14px;
-}
-
-.player-track-meta {
-    text-align: center;
-}
-
-.player-track-meta p {
-    margin: 0;
-    font-size: 20px;
-    color: #0e0e0e;
-    font-weight: 700;
-}
-
-.player-track-meta span {
-    font-size: 16px;
-    font-weight: 400;
-    padding: 0 2px;
-    position: relative;
-    top: 1px;
-    color: #a3a3a3;
-}
-
-.player-controls {
+.play-container {
     display: flex;
     align-items: center;
 }
 
-.player-play-btn {
-    background: transparent;
+.audio-player-container {
+    background-color: #ffffff;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    color: var(--backgroundDivContainer)
+}
+
+.volume-container {
+    display: flex;
+}
+
+.audio-control {
+    background-color: transparent;
     border: none;
-    cursor: pointer;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 50%;
+    transition: 200ms;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 36px;
-    height: 36px;
+    justify-content: space-around;
+    &:hover {
+        background-color: #ee4c24;
+        .play {
+            color: #ffffff;
+        }
+    }
 }
 
-.icon-container {
-    fill: transparent;
-    stroke: none;
+.play {
+    color: #00000099;
 }
 
-.player-play-btn:hover {
-    fill: #444444;
+
+.waveform {
+    width: 50%;
+    min-width: 20%;
 }
 
-.player-play-btn svg {
-    color: #0e0e0e;
-    position: relative;
-    left: 0.5px;
-    width: 36px;
-    height: 36px;
-    display: block;
-}
-
-.player-play-btn:hover svg {
-    color: #ffffff;
-}
-
-.player-timeline {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 10px;
-}
-
-.player-progress {
-    display: flex;
-    position: relative;
-    height: 6px;
-    background: #a3a3a3;
-    border-radius: 25px;
-    margin: 0 5px;
-    flex: 10;
-    flex-basis: 100%;
-    overflow: hidden;
-}
-
-.player-progress-filled {
-    height: 6px;
-    background: #0e0e0e;
-    flex: 0;
-    flex-basis: 0%;
-    border-radius: 25px;
-}
-
-.player-time {
-    padding: 2px 5px;
-    color: #0e0e0e;
+.audio-time {
+    margin-inline: 1rem;
 }
