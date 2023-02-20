@@ -43,6 +43,12 @@
             </article>
             <!---------------------- DESCRIPTION ARTICLE END ------------------------>
 
+            <!---------------------- VIDEO PLAYER START ------------------------>
+            <article class="video-article">
+                <iframe class="yt-video" src="https://www.youtube.com/embed/eSkyU2QplYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </article>
+            <!---------------------- VIDEO PLAYER END ------------------------>
+
             <!---------------------- TEAM ARTICLE START ------------------------>
             <article class="team-article">
                 <div class="team-container-left">
@@ -88,68 +94,88 @@
             </article>
             <!---------------------- TEAM ARTICLE END ------------------------>
 
-            <!---------------------- VIDEO PLAYER START ------------------------>
-            <article class="video-article">
-                <iframe class="yt-video" src="https://www.youtube.com/embed/eSkyU2QplYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </article>
-            <!---------------------- VIDEO PLAYER END ------------------------>
-
             <!---------------------- AUDIO PLAYER START ------------------------>
             <article class="audio-article">
                 <div class="audio-player-container">
                     <!-- <span class="loader"></span> -->
-                    <div class="play-container">
-                        <button id="audioControl1" class="audio-control">
-                            <img class="play" src="./assets/svg/play.svg" alt="" />
-                        </button>
-                        <p id="audio1Time" class="audio-time">-- : --</p>
+                    <div class="audio-title-container">
+                        <h4>Please Please Me - The Beatles</h4>
+                        <span>5 O'clock</span>
                     </div>
-                    <div class="waveform" id="waveform1"></div>
-                    <p id="duration1" class="audio-time">-- : --</p>
-                    <div class="volume-container">
-                        <input class="volume-control" id="volume1" value="0.7" type="range" min="0" max="1" step="0.01">
-                        <button id="muteControl1" class="mute-control audio-control">
-                            <img src="./assets/svg/volume.svg" alt="" />
-                        </button>
-                    </div>
-                </div>
-                <div class="audio-player-container">
-                    <div class="play-container">
-                        <button id="audioControl2" class="audio-control">
-                            <img src="./assets/svg/play.svg" alt="" />
-                        </button>
-                        <p id="audio2Time" class="audio-time">-- : --</p>
-                    </div>
-                    <div class="waveform" id="waveform2"></div>
-                    <p id="duration2" class="audio-time">-- : --</p>
-                    <div>
-                        <input id="volume2" class="volume-control" value="0.7" type="range" min="0" max="1" step="0.01">
-                        <button id="muteControl2" class="mute-control audio-control">
-                            <img src="./assets/svg/volume.svg" alt="" />
-                        </button>
+                    <div class="audio-player-content">
+                        <div class="main-content-player">
+                            <div class="play-container">
+                                <button id="audioControl1" class="audio-control">
+                                    <img class="play" src="./assets/svg/play.svg" alt="" />
+                                </button>
+                                <p id="audio1Time" class="audio-time">-- : --</p>
+                            </div>
+                            <div class="waveform" id="waveform1"></div>
+                            <p id="duration1" class="audio-time">-- : --</p>
+                            <div class="volume-container" id="volume1Container">
+                                <input class="volume-control d-none" id="volume1" value="0.7" type="range" min="0" max="1" step="0.01" />
+                                <button id="muteControl1" class="mute-control audio-control">
+                                    <img src="./assets/svg/volume.svg" alt="" />
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="audio-player-container">
-                    <div class="play-container">
-                        <button id="audioControl3" class="audio-control">
-                            <img src="./assets/svg/play.svg" alt="" />
-                        </button>
-                        <p id="audio3Time" class="audio-time">-- : --</p>
+                    <!-- <span class="loader"></span> -->
+                    <div class="audio-title-container">
+                        <h4>Rolling In The Deep - Adele</h4>
+                        <span>5 O'clock</span>
                     </div>
-                    <div class="waveform" id="waveform3"></div>
-                    <p id="duration3" class="audio-time">-- : --</p>
-                    <div>
-                        <input id="volume3" class="volume-control" value="0.7" type="range" min="0" max="1" step="0.01">
-                        <button id="muteControl3" class="mute-control audio-control">
-                            <img src="./assets/svg/volume.svg" alt="" />
-                        </button>
+                    <div class="audio-player-content">
+                        <div class="main-content-player">
+                            <div class="play-container">
+                                <button id="audioControl2" class="audio-control">
+                                    <img class="play" src="./assets/svg/play.svg" alt="" />
+                                </button>
+                                <p id="audio2Time" class="audio-time">-- : --</p>
+                            </div>
+                            <div class="waveform" id="waveform2"></div>
+                            <p id="duration2" class="audio-time">-- : --</p>
+                            <div class="volume-container" id="volume2Container">
+                                <input class="volume-control d-none" id="volume2" value="0.7" type="range" min="0" max="1" step="0.01" />
+                                <button id="muteControl2" class="mute-control audio-control">
+                                    <img src="./assets/svg/volume.svg" alt="" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="audio-player-container">
+                    <!-- <span class="loader"></span> -->
+                    <div class="audio-title-container">
+                        <h4>Walkin' on sunshine - Katrina & The Waves</h4>
+                        <span>5 O'clock</span>
+                    </div>
+                    <div class="audio-player-content">
+                        <div class="main-content-player">
+                            <div class="play-container">
+                                <button id="audioControl3" class="audio-control">
+                                    <img class="play" src="./assets/svg/play.svg" alt="" />
+                                </button>
+                                <p id="audio3Time" class="audio-time">-- : --</p>
+                            </div>
+                            <div class="waveform" id="waveform3"></div>
+                            <p id="duration3" class="audio-time">-- : --</p>
+                            <div class="volume-container" id="volume3Container">
+                                <input class="volume-control d-none" id="volume3" value="0.7" type="range" min="0" max="1" step="0.01" />
+                                <button id="muteControl3" class="mute-control audio-control">
+                                    <img src="./assets/svg/volume.svg" alt="" />
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
             <!---------------------- AUDIO PLAYER END ------------------------>
         </main>
         <!---------------------- MAIN END ------------------------>
-        <footer></footer>
+        <!-- <footer></footer> -->
         <script src="https://unpkg.com/wavesurfer.js"></script>
         <script src="./JS/index.js"></script>
     </body>

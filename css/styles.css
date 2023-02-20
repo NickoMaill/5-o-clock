@@ -42,6 +42,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 95vw;
 }
 
 h1,
@@ -82,13 +83,14 @@ footer {
   background-color: var(--backgroundDivContainer);
 }
 
+header,
 article {
   padding-block: 6rem;
   padding-inline: 4rem;
 }
 
 header {
-  margin-top: 1rem;
+  margin-top: 1rem !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,15 +104,20 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
-  width: 100vw;
+  height: 95vh;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.d-none {
+  display: none;
 }
 
 /** SPINNER **/
 .loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #fff;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #000000;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
@@ -150,6 +157,13 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: fadeIn 1s ease-in;
+          animation: fadeIn 1s ease-in;
+}
+
+.header-title-container {
+  -webkit-animation: fadeIn 1s ease-in;
+          animation: fadeIn 1s ease-in;
 }
 
 .header-icon {
@@ -161,6 +175,32 @@ header {
 .header-icon:hover {
   -webkit-transform: scale(1.4);
           transform: scale(1.4);
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 100%;
+  }
 }
 
 .description-paragraph {
@@ -245,6 +285,19 @@ header {
   height: 405px;
 }
 
+.audio-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .play-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -263,23 +316,82 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  padding: 1.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  padding-block: 1.5rem;
   border-radius: 0.5rem;
   color: var(--backgroundDivContainer);
+}
+
+.audio-title-container {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.audio-title-container span {
+  padding-top: 1rem;
+}
+
+.audio-player-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.main-content-player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
 
 .volume-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.volume-control {
+  -webkit-appearance: slider-vertical;
+  height: 5rem;
+  left: 2.5rem;
+  position: absolute;
+  padding: 1rem;
+  accent-color: #ff6b46;
+  width: 1px !important;
 }
 
 .audio-control {
   background-color: transparent;
   border: none;
   padding: 0.5rem;
-  margin: 1rem;
   border-radius: 50%;
   -webkit-transition: 200ms;
   transition: 200ms;
@@ -294,11 +406,16 @@ header {
 }
 
 .audio-control:hover {
-  background-color: #ee4c24;
+  background-color: #00000029;
 }
 
 .audio-control:hover .play {
   color: #ffffff;
+}
+
+.mute-control {
+  position: relative;
+  z-index: 2;
 }
 
 .play {
@@ -307,10 +424,22 @@ header {
 
 .waveform {
   width: 50%;
-  min-width: 20%;
+  min-width: 10%;
+}
+
+.waveform wave {
+  height: 70px !important;
 }
 
 .audio-time {
-  margin-inline: 1rem;
+  width: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-left: 0.5rem;
 }
 /*# sourceMappingURL=styles.css.map */

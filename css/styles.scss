@@ -29,11 +29,13 @@
 
 body {
     background-image: url(../assets/pictures/ElodieRoyPhotographe-4942.jpg);
+    // background-position: center center;
     background-size: cover;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 95vw;
 }
 
 h1,
@@ -73,28 +75,33 @@ header,
 footer {
     background-color: var(--backgroundDivContainer);
 }
-
+header,
 article {
     padding-block: 6rem;
     padding-inline: 4rem;
 }
 
 header {
-    margin-top: 1rem;
+    margin-top: 1rem !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: 95vh;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.d-none {
+    display: none;
 }
 
 /** SPINNER **/
 
 .loader {
-    width: 48px;
-    height: 48px;
-    border: 5px solid #fff;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #000000;
     border-bottom-color: transparent;
     border-radius: 50%;
     display: inline-block;
@@ -115,6 +122,11 @@ header {
     margin-block: 3rem;
     display: flex;
     align-items: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.header-title-container {
+    animation: fadeIn 1s ease-in;
 }
 
 .header-icon {
@@ -122,6 +134,17 @@ header {
     transition: 300ms;
     &:hover {
         transform: scale(1.4);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        filter: blur(50px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 100%;
     }
 }
 
@@ -186,6 +209,12 @@ header {
     height: 405px;
 }
 
+.audio-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .play-container {
     display: flex;
     align-items: center;
@@ -196,44 +225,90 @@ header {
     margin: 2rem;
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: 1.5rem;
+    flex-direction: column;
+    width: 50%;
+    padding-block: 1.5rem;
     border-radius: 0.5rem;
     color: var(--backgroundDivContainer)
 }
 
+.audio-title-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    span {
+        padding-top: 1rem;
+    }
+}
+
+.audio-player-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-content-player {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .volume-container {
     display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.volume-control {
+    -webkit-appearance: slider-vertical;
+    height: 5rem;
+    left: 2.5rem;
+    position: absolute;
+    padding: 1rem;
+    accent-color: #ff6b46;
+    width: 1px !important;
 }
 
 .audio-control {
     background-color: transparent;
     border: none;
     padding: 0.5rem;
-    margin: 1rem;
     border-radius: 50%;
     transition: 200ms;
     display: flex;
     align-items: center;
     justify-content: space-around;
     &:hover {
-        background-color: #ee4c24;
+        background-color: #00000029;
         .play {
             color: #ffffff;
         }
     }
 }
 
+.mute-control {
+    position: relative;
+    z-index: 2;
+}
+
 .play {
     color: #00000099;
 }
 
-
 .waveform {
     width: 50%;
-    min-width: 20%;
+    min-width: 10%;
+    wave {
+        height: 70px !important;
+    }
 }
 
 .audio-time {
-    margin-inline: 1rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 0.5rem;
 }
