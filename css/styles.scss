@@ -34,8 +34,10 @@ body {
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 95vw;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 h1,
@@ -62,7 +64,6 @@ a {
     text-decoration: none;
 }
 
-header,
 footer,
 section,
 article {
@@ -83,12 +84,13 @@ article {
 
 header {
     margin-top: 1rem !important;
+    margin-inline: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 95vh;
-    width: 100%;
+    width: 90%;
     max-width: 1440px;
 }
 

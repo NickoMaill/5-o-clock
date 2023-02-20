@@ -39,10 +39,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 95vw;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 h1,
@@ -69,7 +73,6 @@ a {
   text-decoration: none;
 }
 
-header,
 footer,
 section,
 article {
@@ -91,6 +94,7 @@ article {
 
 header {
   margin-top: 1rem !important;
+  margin-inline: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,7 +109,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   height: 95vh;
-  width: 100%;
+  width: 90%;
   max-width: 1440px;
 }
 
