@@ -22,6 +22,17 @@ const volume1Container = document.querySelector("#volume1Container");
 const volume2Container = document.querySelector("#volume2Container");
 const volume3Container = document.querySelector("#volume3Container");
 
+const galleryContainerRoot = document.querySelector('#galleryContainerRoot');
+
+const picturesArray = [
+    "../assets/pictures/ElodieRoyPhotographe-4776.jpg",
+    "../assets/pictures/ElodieRoyPhotographe-4825.jpg",
+    "../assets/pictures/ElodieRoyPhotographe-4788.jpg",
+    "../assets/pictures/fanny.webp",
+    "../assets/pictures/leo5.webp",
+    "../assets/pictures/sam.webp",
+]
+
 const audioPlayer = (control, time, audioDuration, audioPath, whichAudio, volume, mute) => {
     const wavesurfer = WaveSurfer.create({
         container: `#waveform${whichAudio}`,
@@ -96,6 +107,18 @@ const setSlideVolumeDisplay = (container, slider) => {
         slider.classList.add('d-none')
     });
 }
+
+const mapPhotoGallery = () => {
+    picturesArray.forEach((pic, i) => {
+        const imgTag = document.createElement('img');
+        imgTag.src = pic;
+        imgTag.alt = `photo n°${i + 1}`;
+        imgTag.title = `photo n°${i + 1}`;
+        imgTag.classList.add('photo-gallery-element')
+        galleryContainerRoot.appendChild(imgTag)
+    })
+}
+
 audioPlayer(audioControl1, audio1Time, audio1Duration, '../audio/Please-Please-Me.mp3', 1, volume1, muteControl1);
 audioPlayer(audioControl2, audio2Time, audio2Duration, '../audio/Rolling-In-The-Deep.mp3', 2, volume2, muteControl2);
 audioPlayer(audioControl3, audio3Time, audio3Duration, '../audio/Walking-On-Sunshine.mp3', 3, volume3, muteControl3);
@@ -103,3 +126,5 @@ audioPlayer(audioControl3, audio3Time, audio3Duration, '../audio/Walking-On-Suns
 setSlideVolumeDisplay(volume1Container, volume1);
 setSlideVolumeDisplay(volume2Container, volume2);
 setSlideVolumeDisplay(volume3Container, volume3);
+
+mapPhotoGallery();
