@@ -28,6 +28,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url(../assets/pictures/ElodieRoyPhotographe-4942.jpg);
   background-size: cover;
@@ -69,6 +73,10 @@ h1 {
   text-transform: uppercase;
 }
 
+li {
+  list-style: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -80,29 +88,19 @@ article {
   max-width: 1440px;
 }
 
-header {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 article,
-.header-container,
+header,
 footer {
   background-color: var(--backgroundDivContainer);
 }
 
-.header-container,
+header,
 article {
   padding-block: 6rem;
   padding-inline: 4rem;
 }
 
-.header-container {
+header {
   margin-top: 1rem !important;
   margin-inline: 3rem;
   display: -webkit-box;
@@ -429,7 +427,7 @@ article {
 
 .mute-control {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .play {
@@ -457,21 +455,65 @@ article {
   margin-left: 0.5rem;
 }
 
-.photo-gallery-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
-.photo-gallery-element {
+/* Modal Content/Box */
+.modal-content {
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.horizontaleImgModal {
   display: block;
-  max-width: 230px;
-  max-height: 95px;
+  max-width: 1030px;
+  max-height: 2000px;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+}
+
+.verticalImgModal {
+  display: block;
+  max-width: 530px;
+  max-height: 1000px;
   width: auto;
   height: auto;
   margin: 1rem;
