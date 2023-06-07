@@ -44,7 +44,7 @@ const audioPlayer = (control, time, audioDuration, audioPath, whichAudio, volume
     // INIT waveSurferJs lib and set all styles option
     const wavesurfer = WaveSurfer.create({
         container: `#waveform${whichAudio}`,
-        waveColor: '#4D4D4D',
+        waveColor: '#FFFFFF',
         progressColor: '#ff6b46',
         barWidth: 2,
         barRadius: 3,

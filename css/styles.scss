@@ -1,22 +1,22 @@
 @font-face {
-    font-family: 'Main-font';
+    font-family: "Main-font";
     src: url(../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
 @font-face {
-    font-family: 'Main-font-italic';
+    font-family: "Main-font-italic";
     src: url(../assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf);
 }
 
 @font-face {
-    font-family: 'Title-font';
+    font-family: "Title-font";
     src: url(../assets/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf);
 }
 
 :root {
-    --mainFront: 'Main-font';
-    --mainFontItalic: 'Main-font-italic';
-    --titleFont: 'Title-font';
+    --mainFront: "Main-font";
+    --mainFontItalic: "Main-font-italic";
+    --titleFont: "Title-font";
     --backgroundDivContainer: #00000099;
     --fontColor: #ffffff;
 }
@@ -230,7 +230,7 @@ header {
 }
 
 .audio-player-container {
-    background-color: #ffffff;
+    background-color: #222323;
     margin: 2rem;
     display: flex;
     align-items: center;
@@ -238,13 +238,14 @@ header {
     width: 50%;
     padding-block: 1.5rem;
     border-radius: 0.5rem;
-    color: var(--backgroundDivContainer)
+    color: var(--backgroundDivContainer);
 }
 
 .audio-title-container {
     text-align: center;
     display: flex;
     flex-direction: column;
+    color: #ffffff;
     span {
         padding-top: 1rem;
     }
@@ -290,7 +291,7 @@ header {
     align-items: center;
     justify-content: space-around;
     &:hover {
-        background-color: #00000029;
+        background-color: #ffffff29;
         .play {
             color: #ffffff;
         }
@@ -303,12 +304,13 @@ header {
 }
 
 .play {
-    color: #00000099;
+    color: #ffffff99;
 }
 
 .waveform {
     width: 50%;
     min-width: 10%;
+    color: #ffffff;
     wave {
         height: 70px !important;
     }
@@ -320,6 +322,7 @@ header {
     align-items: center;
     text-align: center;
     margin-left: 0.5rem;
+    color: #ffffff;
 }
 
 /* The Modal (background) */
@@ -332,46 +335,77 @@ header {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  .horizontaleImgModal {
-    display: block;
-    max-width: 1030px;
-    max-height: 2000px;
-    width: auto;
-    height: auto;
-    margin: 1rem;
-  }
+.picture-container {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+}
 
-  .verticalImgModal {
-    display: block;
-    max-width: 530px;
-    max-height: 1000px;
-    width: auto;
-    height: auto;
+.picture-container::-webkit-scrollbar {
+    display: none;
+}
+
+.picture {
     margin: 1rem;
-  }
+    text-align: center;
+    cursor: pointer;
+    transition: 500ms;
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:active {
+        transform: scale(1);
+        transition: 500ms;
+    }
+}
+
+.active-carousel {
+    cursor: grabbing;
+}
+
+.setList-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    li {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.setList-item {
+    display: flex;
+    margin-block: 1rem;
+}
