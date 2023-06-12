@@ -142,9 +142,9 @@ const setSliderVolumeVisibility = (container, slider) => {
 // --> METHODS - end region /////////////////////////////////
 
 // --> EXECUTABLE - start region ////////////////////////////
-audioPlayer(audioControl1, audio1Time, audio1Duration, '../assets/audio/Please-Please-Me.mp3', 1, volume1, muteControl1);
-audioPlayer(audioControl2, audio2Time, audio2Duration, '../assets/audio/Rolling-In-The-Deep.mp3', 2, volume2, muteControl2);
-audioPlayer(audioControl3, audio3Time, audio3Duration, '../assets/audio/Walking-On-Sunshine.mp3', 3, volume3, muteControl3);
+audioPlayer(audioControl1, audio1Time, audio1Duration, 'assets/audio/Please-Please-Me.mp3', 1, volume1, muteControl1);
+audioPlayer(audioControl2, audio2Time, audio2Duration, 'assets/audio/Rolling-In-The-Deep.mp3', 2, volume2, muteControl2);
+audioPlayer(audioControl3, audio3Time, audio3Duration, 'assets/audio/Walking-On-Sunshine.mp3', 3, volume3, muteControl3);
 
 setSliderVolumeVisibility(volume1Container, volume1);
 setSliderVolumeVisibility(volume2Container, volume2);
